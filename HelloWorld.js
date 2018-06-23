@@ -2,8 +2,8 @@ var postedMessages = new Array();
 
 const http = require('http');
 const url = require('url');
-const hostname = '192.168.0.53';
-const port = 3000;
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
 const server = http.createServer((req, res) => 
 {
@@ -56,7 +56,7 @@ const server = http.createServer((req, res) =>
   res.end(JSON.stringify(result));
 });
 
-server.listen(port, hostname, () => 
+server.listen(port, ip, () => 
 {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
