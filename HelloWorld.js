@@ -7,6 +7,9 @@ const port = 3000;
 
 const server = http.createServer((req, res) => 
 {
+    
+
+    var ach = null;
     var result, query;
     result = new Object();
     query = url.parse(req.url, true).query;
