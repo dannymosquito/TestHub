@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "test app",
   "main": "HelloWorld.js",
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
   "scripts": {
     "start": "node HelloWorld.js"
   },
